@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>help</class>
+ <widget class="QWidget" name="help">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="minimumSize">
+      <size>
+       <width>600</width>
+       <height>600</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>600</width>
+       <height>600</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑 Light</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>使用说明：
+---连接---
+1、在“Can连接配置”块，选择波特率点击“Can连线”，如果正常连接，选择好电池型号，点击“查找设备”，
+更新设备的采样信息到“电池信息”块表格中。
+---------
+
+---修改---
+1、在“电池信息”块中可以看到对应地址的电池采样数据，选中某一单元格，或一列，之后再“设定值”框中
+输入需要设定的值，单位需要和表头一致，最后点击设置。
+2、可以被修改的信息包括：“电池地址”、“限流”、“电压”、“输出”，其中电池地址的修改会同时修改到同
+一模块的另一个地址。如修改12 -&gt; 20,则结果可能是：11 -&gt; 19 、12 -&gt; 20。
+3、修改时注意不要选中多列信息，虽然可以多列进行修改，但结果和单位都不一致，可能会造成错误。 
+---------
+
+---编程输出---
+1、在“配置”块，该表格可供输入，是用于编辑预设配置的，“添加操作”会新增一条空白操作行，“删除操
+作”会删除所有选中的操作行。
+2、配置包括一个电池的范围（闭区间），和这行操作命令最终要到达的目标电压，以及执行这条命令总共
+需要的时间。如：
+配置“电池范围起始”：1，“电池范围结束”：10，“目标电压”：3300，“执行时间”：10000 。
+则运行效果为，1、2、3、4、5、6、7、8、9、10这些地址的电池，从他们当前的电压，在10S内线性地增
+长到电压3.3V。
+3、点击“运行”会开始运行，并会筛查不合理的操作行，将“操作序号”一列改为“无效”。
+---------</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+     <property name="margin">
+      <number>9</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1150</width>
+    <height>510</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,0,0">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetMinAndMaxSize</enum>
+    </property>
+    <item>
+     <widget class="QGroupBox" name="groupBoxCan">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>450</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>4096</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Can连接配置</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMinAndMaxSize</enum>
+       </property>
+       <item>
+        <widget class="QComboBox" name="canIdSel">
+         <item>
+          <property name="text">
+           <string>CAN1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CAN2</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="CANBaudrate">
+         <property name="currentText">
+          <string>125K</string>
+         </property>
+         <property name="currentIndex">
+          <number>6</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>5K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>10K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>20K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>25K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>50K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>100K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>125K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>150K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>200K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>250K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>500K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1000K</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="ConnectCan">
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>Can连线</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="DisconnectCan">
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei UI</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>Can断线</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="canConnectState">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>未连接</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="cntTxRx">
+         <property name="text">
+          <string>Tx:
+Rx:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="resetCntButton">
+         <property name="text">
+          <string>重置统计</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>模拟电池型号:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="SimulatorType">
+         <property name="editable">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>JCY2200</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>OTHER</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>设备波特率:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="CANBaudrateSet">
+         <property name="currentText">
+          <string>125K</string>
+         </property>
+         <property name="currentIndex">
+          <number>6</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>5K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>10K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>20K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>25K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>50K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>100K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>125K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>150K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>200K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>250K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>500K</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1000K</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="boaudSetButton">
+         <property name="text">
+          <string>配置波特率</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="searchDevice">
+         <property name="text">
+          <string>查找设备</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="devices">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::ImhFormattedNumbersOnly</set>
+         </property>
+         <property name="wrapping">
+          <bool>false</bool>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::NoButtons</enum>
+         </property>
+         <property name="prefix">
+          <string>设备数：</string>
+         </property>
+         <property name="decimals">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxBattery">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>430</width>
+        <height>300</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>4096</width>
+        <height>4096</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>电池信息</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMinAndMaxSize</enum>
+       </property>
+       <item>
+        <widget class="QTableWidget" name="tableWidget_CellInfo">
+         <property name="minimumSize">
+          <size>
+           <width>410</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>4096</width>
+           <height>4096</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">selection-color: rgb(252, 255, 213);
+selection-background-color: rgb(88, 120, 234);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <property name="autoScrollMargin">
+          <number>16</number>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="tabKeyNavigation">
+          <bool>false</bool>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="dragDropOverwriteMode">
+          <bool>false</bool>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="cornerButtonEnabled">
+          <bool>false</bool>
+         </property>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>20</number>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>68</number>
+         </attribute>
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>21</number>
+         </attribute>
+         <attribute name="verticalHeaderDefaultSectionSize">
+          <number>30</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>电池地址</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>限流(mA)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>电流(mA）</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>电压(mV)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>输出</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>温度(℃)</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>4096</width>
+           <height>4096</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>值设置：(先选中一格或一列，然后点击设置)</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>设定值（继电器为1/0）：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="doubleSpinBox">
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="minimum">
+             <double>-10000.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>10000.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="valSetBotton">
+            <property name="text">
+             <string>设置</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxConfig">
+      <property name="minimumSize">
+       <size>
+        <width>590</width>
+        <height>300</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>4096</width>
+        <height>4096</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>配置</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMinAndMaxSize</enum>
+       </property>
+       <item>
+        <widget class="QTableWidget" name="tableWidget_Cmd">
+         <property name="minimumSize">
+          <size>
+           <width>570</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>4096</width>
+           <height>4096</height>
+          </size>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::ImhNone</set>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <property name="midLineWidth">
+          <number>1</number>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         </property>
+         <property name="tabKeyNavigation">
+          <bool>true</bool>
+         </property>
+         <property name="dragEnabled">
+          <bool>false</bool>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="rowCount">
+          <number>1</number>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>111</number>
+         </attribute>
+         <row/>
+         <column>
+          <property name="text">
+           <string>操作序号(可留空)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>电池范围起始(&gt;0)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>电池范围结束(&lt;60)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>目标电压(mV)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>执行时间(s)</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxCtrl">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>4096</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>控制</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="AddButton">
+            <property name="text">
+             <string>添加操作</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="DelButton">
+            <property name="text">
+             <string>删除操作</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="RunButton">
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>4096</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>运行</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="StopButton">
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>4096</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>停止</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="progressBar">
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>4096</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1150</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="fileBar">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="importCfg"/>
+    <addaction name="exportCfg"/>
+    <addaction name="debugLog"/>
+   </widget>
+   <widget class="QMenu" name="configBar">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="helpBar">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionhelp"/>
+   </widget>
+   <addaction name="fileBar"/>
+   <addaction name="configBar"/>
+   <addaction name="helpBar"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="importCfg">
+   <property name="text">
+    <string>导入配置</string>
+   </property>
+  </action>
+  <action name="exportCfg">
+   <property name="text">
+    <string>导出配置</string>
+   </property>
+  </action>
+  <action name="debugLog">
+   <property name="text">
+    <string>输出日志</string>
+   </property>
+  </action>
+  <action name="actionhelp">
+   <property name="text">
+    <string>使用说明页面</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
